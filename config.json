@@ -13,6 +13,10 @@
     "hostname":   "localhost",
     "port":       ""
   },
+  "cookie_session": {
+    "secret": "",
+    "key": ""
+  },
   "media": {
     "local": {
       "path":       "/media/pi/stockage/",
