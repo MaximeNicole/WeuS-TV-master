@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="UTF-8">
+    <title>Liste des films</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+</head>
+<body>
+
+<header>
+
+</header>
+
+<div id="content">
+    <div id="list-movies"></div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    io = io.connect();
+
+    // Emit ready event.
+    io.emit('ready');
+    io.emit('list-movies');
+    console.time('ready');
+
+    // Listen for the talk event.
+    io.on('ready', function (data) {
+        console.timeEnd('ready');
+        console.info(data.message);
+    });
+
+    io.on('list-movies', function (data) {
+        $.each(data, function (index, value) {
+            $('#list-movies').append('<button id="movies-' + index + '">' + value + '</button>');
+        });
+
+        // Add listener
+        $("button[id^='movies-']").on('click', function () {
+            var id = $(this).attr('id').replace('movies-', '');
+            alert(data[id]);
+        });
+    });
+</script>
+
+</body>
+</html>
