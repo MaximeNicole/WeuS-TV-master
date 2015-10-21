@@ -1,0 +1,44 @@
+html {
+  width: 100%;
+  height: 100%;
+
+  body {
+    width: 100%;
+    height: 100%;
+
+    #content {
+      width: 100%;
+      height: 100%;
+
+      .top {
+        width: 100%;
+        height: 50%;
+
+      }
+
+      .bottom {
+        width: 100%;
+        height: 50%;
+
+        .section {
+          width: 32%;
+          height: 100%;
+          /*position:absolute;*/
+          display: table;
+          float: left;
+          margin-left: 2%;
+          &:first-child {
+            margin-left: inherit;
+          }
+
+          a {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+          }
+        }
+
+      }
+    }
+  }
+}
