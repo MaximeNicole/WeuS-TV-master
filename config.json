@@ -9,6 +9,10 @@
       "port":       ""
     }
   },
+  "webserver": {
+    "hostname":   "localhost",
+    "port":       ""
+  },
   "media": {
     "local": {
       "path":       "/media/pi/stockage/",
