@@ -1,4 +1,4 @@
-# Raspeberry Project WeuS TV
+# Raspberry Project WeuS TV
 
 Ce project a été développé pour fonctionner avec :
 * 2 Raspberry Pi (master/slave),
