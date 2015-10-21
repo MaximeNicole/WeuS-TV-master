@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+</head>
+<body>
+
+<div id="content">
+
+    <div class="top">
+        <div class="button">
+            <a href="/">
+
+            </a>
+        </div>
+
+        <div id="informations" class="">
+
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="section">
+            <a href="/list-movies" class="waves-effect waves-light btn-large btn-3 indigo">
+                <span>Liste des films</span>
+            </a>
+        </div>
+        <div class="section">
+            <a href="/search-movies" class="waves-effect waves-light btn-large btn-3">
+                <span>Chercher un film</span>
+            </a>
+        </div>
+        <div class="section">
+            <a href="/new-movies" class="waves-effect waves-light btn-large btn-3 blue-grey">
+                <span>Nouveautés</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    io = io.connect();
+
+    // Emit ready event.
+    io.emit('ready');
+    console.time('ready');
+
+    // Listen for the talk event.
+    io.on('ready', function (data) {
+        console.timeEnd('ready');
+        console.info(data.message);
+    });
+</script>
+</body>
+</html>
