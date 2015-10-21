@@ -1,26 +1,33 @@
-var socketEmit = {};
+var socketEmit = {},
+    socketStart = false;
 
-var iosockets = function (iosockets) {
+var sockets = function (appio) {
 
-    socketEmit = iosockets;
+    socketEmit = appio;
 
     // Add a connect listener
-    iosockets.on('connection', function (socket) {
+    appio.on('connection', function (socket) { // Todo: A tester
         console.log('Slave connected.');
+        socketStart = true;
 
         // Disconnect listener
-        socket.on('disconnect', function () {
+        socket.on('disconnect', function () {// Todo: A tester
             console.log('Slave disconnected.');
+            socketStart = false;
         });
     });
 };
 
-exports.iosocket = iosockets;
+exports.sockets = sockets;
 
 
 var emit = {
     play: function (timeStart, path, name) {
-        socketEmit.emit('play', {timeStart: timeStart, path: path, name: name});
+        //if (socketStart) {
+        socketEmit.broadcast('play', {timeStart: timeStart, path: path, name: name});
+        return true;
+        //}
+        //return false;
     }
 };
 
