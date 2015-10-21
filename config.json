@@ -1,0 +1,30 @@
+{
+  "server": {
+    "master": {
+      "hostname":   "localhost",
+      "port":       ""
+    },
+    "slave": {
+      "hostname":   "",
+      "port":       ""
+    }
+  },
+  "media": {
+    "local": {
+      "path":       "/media/pi/stockage/",
+      "movies":     "movies/",
+      "musics":     "musics/"
+    },
+    "torrents": {
+      "host":       "",
+      "port":       "22",
+      "username":   "",
+      "password":   "",
+      "path":       ""
+    },
+    "extensions": {
+      "movies":     [".mp4", ".avi", ".mkv"],
+      "musics":     ["mp3"]
+    }
+  }
+}
