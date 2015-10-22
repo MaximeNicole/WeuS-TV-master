@@ -3,7 +3,6 @@ var
     express = require('express'),
     app = express(),
     http = require('http'),
-    socket = require('socket.io')(),
     slashes = require("connect-slashes"),
     ejs = require('ejs'),
     path = require('path');
@@ -17,7 +16,7 @@ app.engine('htmlejs', ejs.renderFile);
 app.set('views', path.join(__dirname, 'views/'));
 app.set('view engine', 'ejs');
 app.set('x-powered-by', false);
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use(slashes(true));
 //app.use(express.logger('dev'));
