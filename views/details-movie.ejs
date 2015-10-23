@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+</head>
+<body id="<%= id %>">
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
+
+<script>
+    io = io.connect();
+    var $ = jQuery;
+
+    // Emit ready event.
+    io.emit('ready');
+    console.time('ready');
+    io.emit('details-movie', {id: $('body').attr('id')});
+
+    // Listen for the talk event.
+    io.on('ready', function (data) {
+        console.timeEnd('ready');
+
+        io.on('details-movie', function (data) {
+            var body = $('body');
+            body.css('background-url', data.posterURL);
+            body.css('background-size', 'cover');
+        });
+    });
+    $('body').css('background-image', 'url(http://image.tmdb.org/t/p/w1920/11RZtcc6e7wcZliIUjHNemQ1YF9.jpg)');
+    $('body').css('background-size', 'cover');
+    $('.ui-page').css('background-color', 'rgba(0,0,0,0)');
+</script>
+
+</body>
+</html>

@@ -32,3 +32,8 @@ A venir
 ### Slave
 
 A venir
+
+
+Copyright (©) 2015 - Maxime Nicole
+
+[![Analytics](https://ga-beacon.appspot.com/UA-69159688-1/weus-tv-master/readme)](https://github.com/igrigorik/ga-beacon)

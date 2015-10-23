@@ -26,6 +26,7 @@
 
 <script>
     io = io.connect();
+    var $ = jQuery;
 
     // Emit ready event.
     io.emit('ready');
@@ -35,19 +36,24 @@
     // Listen for the talk event.
     io.on('ready', function (data) {
         console.timeEnd('ready');
-        console.info(data.message);
     });
 
-    io.on('list-movies', function (data) {
-        $.each(data, function (index, value) {
-            $('#list-movies').append('<button id="movies-' + index + '">' + value + '</button>');
-        });
+    io.on('client-list-movies-local', function (data) {
+        console.table(data);
+        $('#list-movies').append(
+                '<div class="movie movie-vertical">' +
+                '<a href="#" filePath="' + data.filePath + '">' +
+                '<h2>' + data.title + '<h2> <span class="year">(' + data.year + ')</span>' +
+                '<img src="' + data.posterURL + '" alt="' + data.title + '" />' +
+                '</a>' +
+                '</div>'
+        );
 
         // Add listener
-        $("button[id^='movies-']").on('click', function () {
-            var id = $(this).attr('id').replace('movies-', '');
-            alert(data[id]);
-        });
+        /*$("button[id^='movies-']").on('click', function () {
+         var id = $(this).attr('id').replace('movies-', '');
+         alert(data[id]);
+         });*/
     });
 </script>
 

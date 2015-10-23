@@ -20,6 +20,10 @@ var routes = function (app) {
         res.render('new-movies', {});
     });
 
+    app.get('/movie/:id/details', function (req, res) {
+        res.render('details-movie', {title: 'Détails film | ' + req.params.id, id: req.params.id});
+    });
+
 };
 
 module.exports = routes;

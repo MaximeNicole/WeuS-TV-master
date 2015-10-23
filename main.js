@@ -43,7 +43,7 @@ app.use(slashes(true));
 //app.use(app.router);
 
 /* Express: Import Routes */
-require('./routes')(app);
+require('./routes/routes')(app);
 
 /* Socket IO: Configuration
  app.io.configure(function () {
@@ -68,6 +68,5 @@ require('./routes')(app);
 var server = http.createServer(app).listen(config.webserver.port);
 var io = require('socket.io').listen(server);
 
-require('./socket').sockets(io);
-//emit = require('./socket').emit;
-//console.log(emit.play(0, 'test', 'test.avi'));
+require('./sockets/socketSlave').sockets(io);
+require('./sockets/socketWeb')(io);
