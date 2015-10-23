@@ -32,6 +32,7 @@ var sockets = function (appio) {
             logger.log('info', 'list-movies');
 
             program.movie.getList(function (file) {
+                logger.log('debug', file);
                 program.movie.getInfo(file, function (infos) {
                     socket.emit('client-list-movies-local', infos);
                 });
