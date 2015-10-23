@@ -9,8 +9,25 @@
     <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
 </head>
-<body id="<%= id %>">
+<body id="<%= id %>" class="movie-details">
 
+<div id="content">
+    <h2></h2>
+    <span id="year"></span>
+    <span id="rating"></span>
+    <span id="genre"></span>
+    <span id="adult"></span>
+
+    <p id="overview"></p>
+    <img id="jaquette" src="" alt="jaquette"/>
+
+    <div id="commands">
+        <ul>
+            <li>Lecture</li>
+            <li>Voir la Bande Annonce</li>
+        </ul>
+    </div>
+</div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/jquery/jquery.min.js"></script>
@@ -31,14 +48,22 @@
         console.timeEnd('ready');
 
         io.on('details-movie', function (data) {
-            alert(data);
+            console.log(data);
             var body = $('body');
-            body.css('background-url', data.posterURL);
-            body.css('background-size', 'cover');
+            $(body).css('background-image', 'url(' + data.backgroundURL + ')');
+            $(body).css('background-size', 'cover');
+
+            var content = $('#content');
+            $('h2', content).text(data.title);
+            $('#year', content).text(data.year);
+            $('#rating', content).text(data.rating);
+            $('#genre', content).text(data.genre);
+            $('#adult', content).text(data.adult);
+            $('#overview', content).text(data.overview);
+            $('#jaquette', content).attr('src', data.posterURL);
+
         });
     });
-    $('body').css('background-image', 'url(http://image.tmdb.org/t/p/w1920/11RZtcc6e7wcZliIUjHNemQ1YF9.jpg)');
-    $('body').css('background-size', 'cover');
     $('.ui-page').css('background-color', 'rgba(0,0,0,0)');
 </script>
 

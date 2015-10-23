@@ -42,4 +42,34 @@ html body #content .bottom .section a {
     text-align: center;
 }
 
+html body.movie-details #content {
+    padding: 14px;
+    font-size: 20px;
+}
+
+html body.movie-details #content h2 {
+    font-size: 28px;
+    display: inline;
+}
+
+html body.movie-details #content #year {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+html body.movie-details #content #genre {
+    font-size: 13px;
+}
+
+html body.movie-details #content #overview {
+    width: 600px;
+}
+
+html body.movie-details #content #jaquette {
+    width: 300px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -40,5 +40,38 @@ html {
 
       }
     }
+
+    &.movie-details {
+
+      #content {
+        padding: 14px;
+        font-size: 20px;
+
+        h2 {
+          font-size: 28px;
+          display: inline;
+        }
+
+        #year {
+          margin-left: 10px;
+          font-size: 24px;
+        }
+
+        #genre {
+          font-size: 13px;
+        }
+
+        #overview {
+          width: 600px;
+        }
+
+        #jaquette {
+          width: 300px;
+          position: absolute;
+          top: 30px;
+          right: 30px;
+        }
+      }
+    }
   }
 }

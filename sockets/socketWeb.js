@@ -43,8 +43,7 @@ var sockets = function (appio) {
         });
 
         socket.on('details-movie', function (id) {
-            var file = {id: id};
-            program.movie.getInfo(file, function (infos) {
+            program.movie.getInfo(id, function (infos) {
                 socket.emit('details-movie', infos);
             })
         });
