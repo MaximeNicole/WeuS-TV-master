@@ -24,6 +24,20 @@ var routes = function (app) {
         res.render('details-movie', {title: 'Détails film | ' + req.params.id, id: req.params.id});
     });
 
+    /* Parameters */
+    // route middleware to validate :name
+    app.param('id', function (req, res, next, id) {
+        // do validation on name here
+        // blah blah validation
+        // log something so we know its working
+        console.log('doing id validations on ' + id);
+
+        // once validation is done save the new item in the req
+        req.id = id;
+        // go to the next thing
+        next();
+    });
+
 };
 
 module.exports = routes;

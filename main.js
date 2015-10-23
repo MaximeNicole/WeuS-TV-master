@@ -1,3 +1,8 @@
+// PM2
+require('pmx').init({
+    http: true
+});
+
 // Load requirements
 var
     express = require('express'),
@@ -9,7 +14,6 @@ var
 
 /* IMPORTANT - No VAR Makes Variables Global */
 config = require('./config');
-
 
 //Express
 app.engine('htmlejs', ejs.renderFile);
