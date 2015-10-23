@@ -23,6 +23,7 @@
     "ssh2": "^0.4.11",
     "to-title-case": "^0.1.5",
     "underscore": "^1.8.3",
+    "v8-profiler": "^5.3.2",
     "walk": "^2.3.9",
     "wget": "0.0.1",
     "winston": "^1.1.1"
