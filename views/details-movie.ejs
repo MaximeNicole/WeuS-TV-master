@@ -31,6 +31,7 @@
         console.timeEnd('ready');
 
         io.on('details-movie', function (data) {
+            alert(data);
             var body = $('body');
             body.css('background-url', data.posterURL);
             body.css('background-size', 'cover');
