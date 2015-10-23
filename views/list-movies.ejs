@@ -42,7 +42,7 @@
         console.table(data);
         $('#list-movies').append(
                 '<div class="movie movie-vertical">' +
-                '<a href="#" filePath="' + data.filePath + '">' +
+                '<a href="/movie/' + data._id + '/details" filePath="' + data.filePath + '">' +
                 '<h2>' + data.title + '<h2> <span class="year">(' + data.year + ')</span>' +
                 '<img src="' + data.posterURL + '" alt="' + data.title + '" />' +
                 '</a>' +
