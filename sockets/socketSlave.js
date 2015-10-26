@@ -6,19 +6,19 @@ var sockets = function (appio) {
     appio.on('connection', function (socket) {
         // Disconnect listener
         socket.on('disconnect', function () {
-            console.log('Launch check');
-            socket.emit('check');
+            //console.log('Launch check');
+            //socket.emit('check');
             // Todo: Use led with GPIO (https://github.com/EnotionZ/GpiO)
             emitSlave.check();
         });
 
         socket.on('slave', function () {
-            console.log('Slave connected.');
+            //console.log('Slave connected.');
             socketEmit = socket;
         });
 
         socket.on('check-slave', function () {
-            console.log('Client disconnected.');
+            //console.log('Client disconnected.');
         });
     });
 };
