@@ -9,7 +9,7 @@ var sockets = function (appio) {
             //console.log('Launch check');
             //socket.emit('check');
             // Todo: Use led with GPIO (https://github.com/EnotionZ/GpiO)
-            emitSlave.check();
+            //emitSlave.check();
         });
 
         socket.on('slave', function () {

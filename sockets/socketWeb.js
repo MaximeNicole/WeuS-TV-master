@@ -15,15 +15,15 @@ var sockets = function (appio) {
         socket.emit('ready');
 
         socket.on('client', function () {
-            console.log('CLient connected.');
+            //console.log('CLient connected.');
         });
 
         socket.on('disconnect', function () {
-            emitSlave.check();
+            //emitSlave.check();
         });
 
         socket.on('check-client', function () {
-            console.log('Slave disconnected.');
+            //console.log('Slave disconnected.');
         });
 
 
