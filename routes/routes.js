@@ -24,6 +24,10 @@ var routes = function (app) {
         res.render('details-movie', {title: 'Détails film | ' + req.params.id, id: req.params.id});
     });
 
+    app.get('/movie/:id/bande-annonce', function (req, res) {
+        res.render('bande-annonce', {title: 'Bande annonce | ' + req.params.id, id: req.params.id});
+    });
+
     /* Parameters */
     // route middleware to validate :name
     app.param('id', function (req, res, next, id) {
