@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
 </head>
-<body>
+<body class="list-movies">
 
 <header>
-
+    <a href="/">Accueil</a>
 </header>
 
 <div id="content">
@@ -21,8 +21,8 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
 
 <script>
     io = io.connect();
@@ -39,21 +39,16 @@
     });
 
     io.on('client-list-movies-local', function (data) {
-        console.table(data);
-        $('#list-movies').append(
-                '<div class="movie movie-vertical">' +
-                '<a href="/movie/' + data._id + '/details" filePath="' + data.filePath + '">' +
-                '<h2>' + data.title + '<h2> <span class="year">(' + data.year + ')</span>' +
-                '<img src="' + data.posterURL + '" alt="' + data.title + '" />' +
-                '</a>' +
-                '</div>'
-        );
-
-        // Add listener
-        /*$("button[id^='movies-']").on('click', function () {
-         var id = $(this).attr('id').replace('movies-', '');
-         alert(data[id]);
-         });*/
+        if (data) {
+            $('#list-movies').append(
+                    '<div class="movie movie-vertical">' +
+                    '<a href="/movie/' + data._id + '/details" filePath="' + data.filePath + '">' +
+                    '<div class="title"><h2>' + data.title + '</h2> <span class="year">(' + data.year + ')</span></div>' +
+                    '<img src="' + data.posterURL + '" />' +
+                    '</a>' +
+                    '</div>'
+            );
+        }
     });
 </script>
 

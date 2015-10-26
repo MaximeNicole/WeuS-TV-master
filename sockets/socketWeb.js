@@ -34,7 +34,7 @@ var sockets = function (appio) {
             program.movie.getList(function (file) {
                 logger.log('debug', file);
                 program.movie.getInfo(file, function (infos) {
-                    console.log(infos);
+                    //console.log(infos);
                     socket.emit('client-list-movies-local', infos);
                 });
             });

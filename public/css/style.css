@@ -6,9 +6,31 @@ html {
 html body {
     width: 100%;
     height: 100%;
+    background-color: #000000;
+}
+
+html body header {
+    height: 50px;
+    background-color: #550000;
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+html body header a {
+    padding: 9px 20px;
+    margin: 5px 0 0 10px;
+    border-radius: 7px;
+    color: #FFFFFF;
+    background-color: #cfd8dc;
+    display: inline-block;
+    font-size: 17px;
 }
 
 html body #content {
+    margin-top: 50px;
     width: 100%;
     height: 100%;
 }
@@ -47,29 +69,75 @@ html body.movie-details #content {
     font-size: 20px;
 }
 
-html body.movie-details #content h2 {
+html body.movie-details #content .fond {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 620px;
+    padding: 10px;
+    max-height: 430px;
+    overflow: hidden;
+}
+
+html body.movie-details #content .fond h2 {
     font-size: 28px;
     display: inline;
 }
 
-html body.movie-details #content #year {
+html body.movie-details #content .fond #year {
     margin-left: 10px;
     font-size: 24px;
 }
 
-html body.movie-details #content #genre {
+html body.movie-details #content .fond #genre {
     font-size: 13px;
 }
 
-html body.movie-details #content #overview {
+html body.movie-details #content .fond #overview {
     width: 600px;
+    text-align: justify;
 }
 
 html body.movie-details #content #jaquette {
     width: 300px;
     position: absolute;
-    top: 30px;
+    top: 65px;
     right: 30px;
+    opacity: 0.8;
+}
+
+html body.list-movies {
+    color: #FFFFFF;
+}
+
+html body.list-movies #content {
+    padding: 10px;
+}
+
+html body.list-movies #content .movie-vertical {
+    display: inline-block;
+    width: 24%;
+    vertical-align: top;
+    margin: 5px 9px 0 0;
+}
+
+html body.list-movies #content .movie-vertical .title {
+    height: 55px;
+    overflow: hidden;
+}
+
+html body.list-movies #content .movie-vertical .title h2 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+html body.list-movies #content .movie-vertical img {
+    width: 230px;
+    height: 346px;
+}
+
+html body.list-movies #content .movie-vertical a {
+    color: #FFFFFF;
 }
 
 /*# sourceMappingURL=style.css.map */
