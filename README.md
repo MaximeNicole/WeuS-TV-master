@@ -9,30 +9,6 @@ Ce project a été développé pour fonctionner avec :
 
 Ce projet est actuellement en développement, lorsque celui-ci sera stable je mettrai à jour ce bout de texte pour vous le signaler ;)
 
-## But
-
-Pouvoir regarder sur sa télévision des vidéos stocké sur un disque dur et de pouvoir récupérer ces vidéos à partir d'un serveur distant.
-
-## Schéma de montage
-
-Fait, mais à venir car je pofine les schémas
-
-## Principe de fonctionnement
-
-A venir
-
-## Installation
-
-A venir
-
-### Master
-
-A venir
-
-### Slave
-
-A venir
-
 
 Copyright (©) 2015 - Maxime Nicole
 
