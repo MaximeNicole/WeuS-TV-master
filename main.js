@@ -87,7 +87,7 @@ require('./routes/routes')(app);
 //require('./socketWeb')(app.io);
 
 /* Listen To Server */
-var server = http.createServer(app).listen(config.webserver.port);
+var server = http.createServer(app).listen(config.server.master.port);
 var io = require('socket.io').listen(server);
 
 require('./sockets/socketSlave').sockets(io);

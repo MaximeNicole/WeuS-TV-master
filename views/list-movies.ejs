@@ -11,10 +11,18 @@
 </head>
 <body class="list-movies">
 
-<header>
-    <a href="/">Accueil</a>
-    <a href="#" class="sort-releasedate">Trier par date</a>
-</header>
+<div class="navbar-fixed">
+    <nav class="red darken-4">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/about">A propos</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 <div id="content">
     <div id="list-movies"></div>
@@ -22,6 +30,7 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/js/bin/materialize.min.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
 
@@ -37,6 +46,7 @@
     // Listen for the talk event.
     io.on('ready', function () {
         console.timeEnd('ready');
+        $(".button-collapse").sideNav();
     });
 
     // List of movies
