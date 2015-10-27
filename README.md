@@ -7,7 +7,7 @@ Ce project a été développé pour fonctionner avec :
 * 1 Arduino (option),
 * 1 module GSM FONA 3G (option)
 
-Ce projet est actuellement en développement, retrouvez l'avancement du projet sur [Trello](https://trello.com/b/7s1ElhSf).K
+Ce projet est actuellement en développement, retrouvez l'avancement du projet sur [Trello](https://trello.com/b/7s1ElhSf).
 
 
 Copyright (©) 2015 - Maxime Nicole
