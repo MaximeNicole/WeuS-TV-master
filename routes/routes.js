@@ -12,7 +12,7 @@ var routes = function (app) {
     });
 
     app.get('/list-movies', function (req, res) {
-        res.render('list-movies', {});
+        res.render('list-movies', {picturesMoviesPath: config.media.local.picturesMovies});
     });
 
     app.get('/search-movies', function (req, res) {
