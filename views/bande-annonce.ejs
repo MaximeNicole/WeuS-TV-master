@@ -17,7 +17,8 @@
 </header>
 
 <div id="content">
-
+    <iframe width="780" height="430" src="https://www.youtube.com/embed/<%= key %> %>" frameborder="0"
+            allowfullscreen></iframe>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
@@ -32,15 +33,16 @@
     // Emit ready event.
     io.emit('ready');
     console.time('ready');
-    io.emit('details-movie', {id: $('body').attr('id')});
+    io.emit('bande-annonce', {id: $('body').attr('id')});
 
     // Listen for the talk event.
     io.on('ready', function (data) {
         console.timeEnd('ready');
 
-        io.on('bande annonce', function (data) {
+        io.on('bande-annonce', function (data) {
             console.log(data);
-
+            if (data.site == "Youtube")
+                $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.key);
 
         });
     });

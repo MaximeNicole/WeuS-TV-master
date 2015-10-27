@@ -48,6 +48,10 @@ var sockets = function (appio) {
             })
         });
 
+        socket.on('bande-annonce', function (id) {
+
+        });
+
 
         /* Program */
         socket.on('get-info-movie', function (req) {

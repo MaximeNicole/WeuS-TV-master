@@ -2,6 +2,9 @@
  *
  * @param app
  */
+var program = require('../lib/program');
+var logger = require('winston');
+
 var routes = function (app) {
 
     app.get('/', function (req, res) {
@@ -25,7 +28,20 @@ var routes = function (app) {
     });
 
     app.get('/movie/:id/bande-annonce', function (req, res) {
-        res.render('bande-annonce', {title: 'Bande annonce | ' + req.params.id, id: req.params.id});
+        program.movie.getImdbID(req.params.id, function (imdbID) {
+            program.movie.getBandeAnnonce(imdbID, function (infos) {
+                infos.title = 'Bande annonce | ' + req.params.id;
+                infos.id = req.params.id
+                res.render('bande-annonce', infos);
+            })
+        })
+
+    });
+
+    app.get('/test', function (req, res) {
+        var moviedb = require('../lib/movies/moviedb');
+        moviedb.test();
+        res.render('index', {});
     });
 
     /* Parameters */

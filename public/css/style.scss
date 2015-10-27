@@ -116,7 +116,8 @@ html {
           display: inline-block;
           width: 24%;
           vertical-align: top;
-          margin: 5px 9px 0 0;
+          margin: 5px 7px 0 0;
+          position: relative;
 
           .title {
             height: 55px;
@@ -128,15 +129,29 @@ html {
               padding: 0;
               display: inline;
             }
+          }
 
-            span {
+          .info {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 5px;
+            padding: 0 5px;
 
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(150, 0, 0, 0.5);
             }
           }
 
           img {
-            width: 230px;
-            height: 346px;
+            width: 187px;
+            height: 281px;
           }
 
           a {
