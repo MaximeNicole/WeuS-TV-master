@@ -21,7 +21,7 @@
         if (data) {
             //console.log(data);
             $('#list-movies').append(
-                '<div class="movie movie-vertical" movie="' + data.imdbID + '" releaseDate="' + (typeof(data.releaseDate) !== 'undefined' ? data.releaseDate : data.year + '-99-99') + '">' +
+                '<div class="movie col s3" movie="' + data.imdbID + '" releaseDate="' + (typeof(data.releaseDate) !== 'undefined' ? data.releaseDate : data.year + '-99-99') + '">' +
                 '<a href="/movie/' + data._id + '/details" filePath="' + data.filePath + '">' +
                 '<div class="title"><h2>' + data.title + '</h2></div>' +
                 '<div class="info"><span class="year">' + data.year + '</span></div>' +

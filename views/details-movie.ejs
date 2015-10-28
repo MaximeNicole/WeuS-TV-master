@@ -6,6 +6,8 @@
 
     <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body id="<%= id %>" class="movie-details">
 
@@ -13,66 +15,46 @@
     <nav>
         <div class="nav-wrapper">
             <% include partials/menu.ejs %>
+            <ul class="right">
+                <li><a href="#" onclick="javascript:history.back();"><i
+                                class="material-icons mdi-image-navigate-before"></i></a></li>
+            </ul>
         </div>
     </nav>
 </div>
 
-<div id="content">
-    <div class="fond">
-        <h2></h2>
+<div class="had-container">
+    <div id="content" class="row">
+        <h4></h4>
         <span id="year"></span>
-        <span id="rating"></span>
-        <span id="genre"></span>
-        <span id="adult"></span>
 
-        <p id="overview"></p>
+        <div class="fond col s9 z-depth-2">
+            <span id="rating"></span>
+            <span id="genre"></span>
+            <span id="adult"></span>
+
+            <p id="overview"></p>
+        </div>
+        <div class="col s3">
+            <img id="jaquette" class="responsive-img" src="" alt="jaquette"/>
+        </div>
     </div>
-    <img id="jaquette" src="" alt="jaquette"/>
+    <div id="commands" class="row">
+        <div class="col s12">
+            <a class="btn-floating btn-large waves-effect waves-light green" href="#"><i
+                        class="material-icons mdi-av-play-arrow"></i></a>
+            <ul>
 
-    <div id="commands">
-        <ul>
-            <li>Lecture</li>
-            <li><a href="/movie/<%= id %>/bande-annonce">Voir la Bande Annonce</a></li>
-        </ul>
+                <li><a href="/movie/<%= id %>/bande-annonce">Voir la Bande Annonce</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/jquery/jquery.min.js"></script>
-<script src="/js/bin/materialize.min.js"></script>
-
-<script>
-    io = io.connect();
-    var $ = jQuery;
-
-    // Emit ready event.
-    io.emit('ready');
-    console.time('ready');
-    io.emit('details-movie', {id: $('body').attr('id')});
-
-    // Listen for the talk event.
-    io.on('ready', function (data) {
-        console.timeEnd('ready');
-
-        io.on('details-movie', function (data) {
-            console.log(data);
-            var body = $('body');
-            $(body).css('background-image', 'url(' + data.backgroundURL + ')');
-            $(body).css('background-size', 'cover');
-
-            var content = $('#content');
-            $('h2', content).text(data.title);
-            $('#year', content).text(data.year);
-            $('#rating', content).text(data.rating);
-            $('#genre', content).text(data.genre);
-            $('#adult', content).text(data.adult);
-            $('#overview', content).text(data.overview);
-            $('#jaquette', content).attr('src', data.posterURL);
-
-        });
-    });
-    $('.ui-page').css('background-color', 'rgba(0,0,0,0)');
-</script>
+<script src="/js/materialize/bin/materialize.min.js"></script>
+<script src="/js/custom/details-movie.js"></script>
 
 </body>
 </html>
