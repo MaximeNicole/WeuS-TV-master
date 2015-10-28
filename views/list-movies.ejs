@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <title>Liste des films</title>
 
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body class="list-movies">
 
-<% include partials/menu.ejs %>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <% include partials/menu.ejs %>
+        </div>
+    </nav>
+</div>
 
 <div id="content">
     <div id="list-movies"></div>
