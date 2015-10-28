@@ -4,19 +4,15 @@
 
     $(".button-collapse").sideNav();
 
-    var socket = io.connect('http://localhost:3000');
-    socket.on('ready', function () {
-        // Envoi au Master son identification
-        socket.emit('client');
+    io = io.connect();
 
-        // Test
-        socket.emit('play', {timeStart: 0, path: 'test', name: 'test.avi'});
-    });
+    // Emit ready event.
+    io.emit('ready');
+    io.emit('index');
+    console.time('ready');
 
-// Check
-    socket.on('check', function () {
-        console.log('Check');
-        socket.emit('check-client');
+    io.on('ready', function () {
+        console.timeEnd('ready');
     });
 
     /* Localisation */

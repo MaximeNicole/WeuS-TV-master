@@ -15,6 +15,10 @@
     <nav>
         <div class="nav-wrapper">
             <% include partials/menu.ejs %>
+            <ul class="right">
+                <li><a href="#" class="sort-releasedate"><i class="material-icons mdi-communication-import-export"></i></a>
+                </li>
+            </ul>
         </div>
     </nav>
 </div>
@@ -25,59 +29,8 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/js/bin/materialize.min.js"></script>
-
-<script>
-    io = io.connect();
-    var $ = jQuery;
-
-    // Emit ready event.
-    io.emit('ready');
-    io.emit('list-movies');
-    console.time('ready');
-
-    // Listen for the talk event.
-    io.on('ready', function () {
-        console.timeEnd('ready');
-        $(".button-collapse").sideNav();
-    });
-
-    // List of movies
-    io.on('client-list-movies-local', function (data) {
-        if (data) {
-            //console.log(data);
-            $('#list-movies').append(
-                    '<div class="movie movie-vertical" movie="' + data.imdbID + '" releaseDate="' + (typeof(data.releaseDate) !== 'undefined' ? data.releaseDate : data.year + '-99-99') + '">' +
-                    '<a href="/movie/' + data._id + '/details" filePath="' + data.filePath + '">' +
-                    '<div class="title"><h2>' + data.title + '</h2></div>' +
-                    '<div class="info"><span class="year">' + data.year + '</span></div>' +
-                    '<img src="' + data.posterURL + '" />' +
-                    '</a>' +
-                    '</div>'
-            );
-        }
-    });
-
-    // Sort
-    $('.sort-releasedate').on('click', function () {
-        var movies = $('.movie');
-        $('#list-movies').html('');
-        var sort = $(movies).sort(function (a, b) {
-            if ($(a).attr('releaseDate') !== 'undefined' && $(b).attr('releaseDate') !== 'undefined') {
-                if ($(a).attr('releaseDate') > $(b).attr('releaseDate')) {
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-            return false;
-
-        });
-        $.each(sort, function (key, value) {
-            $('#list-movies').append($(value));
-        });
-    });
-</script>
+<script src="/js/materialize/bin/materialize.min.js"></script>
+<script src="/js/custom/list-movies.js"></script>
 
 </body>
 </html>
