@@ -11,10 +11,7 @@
 </head>
 <body id="<%= id %>" class="movie-details">
 
-<header>
-    <a href="/">Accueil</a>
-    <a href="#" onclick="javascript:history.back();">Retour</a>
-</header>
+<% include partials/menu.ejs %>
 
 <div id="content">
     <iframe width="780" height="430" src="https://www.youtube.com/embed/<%= key %> %>" frameborder="0"
