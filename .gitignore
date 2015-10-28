@@ -31,3 +31,6 @@ node_modules
 
 # App
 config.json
+
+# Custom
+public/img/picturesMovies/*
