@@ -7,155 +7,128 @@ html body {
     width: 100%;
     height: 100%;
     background-color: #000000;
-}
+    /*header {
+      height: 50px;
+      background-color: #550000;
+      position: fixed;
+      z-index: 1000;
+      right: 0;
+      left: 0;
+      top: 0;
 
-html body header {
-    height: 50px;
-    background-color: #550000;
-    position: fixed;
-    z-index: 1000;
-    right: 0;
-    left: 0;
-    top: 0;
-}
+      a {
+        padding: 9px 20px;
+        margin: 5px 0 0 10px;
+        border-radius: 7px;
+        color: #FFFFFF;
+        background-color: #cfd8dc;
+        display: inline-block;
+        font-size: 17px;
+      }
+    }
 
-html body header a {
-    padding: 9px 20px;
-    margin: 5px 0 0 10px;
-    border-radius: 7px;
-    color: #FFFFFF;
-    background-color: #cfd8dc;
-    display: inline-block;
-    font-size: 17px;
-}
+    #content {
+      width: 100%;
+      height: 100%;
+    }
 
-html body #content {
-    width: 100%;
-    height: 100%;
-}
+    &.movie-details {
 
-html body #content .top {
-    width: 100%;
-    height: 50%;
-}
+      #content {
+        padding: 14px;
+        font-size: 20px;
 
-html body #content .bottom {
-    width: 100%;
-    height: 50%;
-}
+        .fond {
+          background-color: rgba(255, 255, 255, 0.5);
+          width: 620px;
+          padding: 10px;
+          max-height: 430px;
+          overflow: hidden;
 
-html body #content .bottom .section {
-    width: 32%;
-    height: 100%;
-    /*position:absolute;*/
-    display: table;
-    float: left;
-    margin-left: 2%;
-}
+          h2 {
+            font-size: 28px;
+            display: inline;
+          }
 
-html body #content .bottom .section:first-child {
-    margin-left: inherit;
-}
+          #year {
+            margin-left: 10px;
+            font-size: 24px;
+          }
 
-html body #content .bottom .section a {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
+          #genre {
+            font-size: 13px;
+          }
 
-html body.movie-details #content {
-    padding: 14px;
-    font-size: 20px;
-}
+          #overview {
+            width: 600px;
+            text-align: justify;
+          }
+        }
 
-html body.movie-details #content .fond {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 620px;
-    padding: 10px;
-    max-height: 430px;
-    overflow: hidden;
-}
+        #jaquette {
+          width: 300px;
+          position: absolute;
+          top: 65px;
+          right: 30px;
+          opacity: 0.8;
+        }
+      }
+    }
 
-html body.movie-details #content .fond h2 {
-    font-size: 28px;
-    display: inline;
-}
+    &.list-movies {
+      color: #FFFFFF;
 
-html body.movie-details #content .fond #year {
-    margin-left: 10px;
-    font-size: 24px;
-}
+      #content {
+        padding: 10px;
 
-html body.movie-details #content .fond #genre {
-    font-size: 13px;
-}
+        .movie-vertical {
+          display: inline-block;
+          width: 24%;
+          vertical-align: top;
+          margin: 5px 7px 0 0;
+          position: relative;
 
-html body.movie-details #content .fond #overview {
-    width: 600px;
-    text-align: justify;
-}
+          .title {
+            height: 55px;
+            overflow: hidden;
 
-html body.movie-details #content #jaquette {
-    width: 300px;
-    position: absolute;
-    top: 65px;
-    right: 30px;
-    opacity: 0.8;
-}
+            h2 {
+              font-size: 24px;
+              margin: 0;
+              padding: 0;
+              display: inline;
+            }
+          }
 
-html body.list-movies {
-    color: #FFFFFF;
-}
+          .info {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 5px;
+            padding: 0 5px;
 
-html body.list-movies #content {
-    padding: 10px;
-}
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -1px;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(150, 0, 0, 0.5);
+            }
+          }
 
-html body.list-movies #content .movie-vertical {
-    display: inline-block;
-    width: 24%;
-    vertical-align: top;
-    margin: 5px 7px 0 0;
-    position: relative;
-}
+          img {
+            width: 187px;
+            height: 281px;
+          }
 
-html body.list-movies #content .movie-vertical .title {
-    height: 55px;
-    overflow: hidden;
-}
-
-html body.list-movies #content .movie-vertical .title h2 {
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-    display: inline;
-}
-
-html body.list-movies #content .movie-vertical .info {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    bottom: 5px;
-    padding: 0 5px;
-}
-
-html body.list-movies #content .movie-vertical .info::before {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(150, 0, 0, 0.5);
-}
-
-html body.list-movies #content .movie-vertical img {
-    width: 187px;
-    height: 281px;
-}
-
-html body.list-movies #content .movie-vertical a {
-    color: #FFFFFF;
+          a {
+            color: #FFFFFF;
+          }
+        }
+      }
+    }*/
 }
 
 /*# sourceMappingURL=style.css.map */
