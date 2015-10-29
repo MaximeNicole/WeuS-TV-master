@@ -18,7 +18,7 @@
 
         io.on('details-movie', function (data) {
             io.emit('getGenres');
-            //console.log(data);
+            console.log(data);
 
             var body = $('body');
             $(body).css('background-image', 'url(' + data.backgroundURL + ')');
@@ -58,6 +58,12 @@
                 genreText = genreText.substr(0, genreText.length - 2);
                 $('#genre', content).text(genreText);
             });
+
+            // No BA
+            if (window.location.hash == '#noba') {
+                $('#ba').remove();
+                Materialize.toast('Pas de bande annonce !', 5000);
+            }
 
 
         });

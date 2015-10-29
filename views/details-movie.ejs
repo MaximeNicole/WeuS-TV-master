@@ -16,8 +16,7 @@
         <div class="nav-wrapper">
             <% include partials/menu.ejs %>
             <ul class="right">
-                <li><a href="#" onclick="javascript:history.back();"><i
-                                class="material-icons mdi-image-navigate-before"></i></a></li>
+                <li><a href="/list-movies"><i class="material-icons mdi-image-navigate-before"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -43,7 +42,8 @@
         <div class="col s12 center-align">
             <a class="btn-floating btn-large waves-effect waves-light green" href="#"><i
                         class="material-icons mdi-av-play-arrow"></i></a>
-            <a class="btn-floating btn-large waves-effect waves-light blue" href="#"><i
+            <a id="ba" class="btn-floating btn-large waves-effect waves-light blue"
+               href="/movie/<%= id %>/bande-annonce"><i
                         class="material-icons mdi-av-movie"></i></a>
         </div>
     </div>

@@ -30,11 +30,15 @@ var routes = function (app) {
     app.get('/movie/:id/bande-annonce', function (req, res) {
         program.movie.getImdbID(req.params.id, function (imdbID) {
             program.movie.getBandeAnnonce(imdbID, function (infos) {
-                infos.title = 'Bande annonce | ' + req.params.id;
-                infos.id = req.params.id
-                res.render('bande-annonce', infos);
-            })
-        })
+                if (infos) {
+                    infos.id = req.params.id;
+                    logger.log('debug', infos);
+                    res.render('bande-annonce', infos);
+                } else {
+                    res.redirect('/movie/' + req.params.id + '/details#noba');
+                }
+            });
+        });
 
     });
 
