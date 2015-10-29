@@ -14,6 +14,7 @@ html {
 
         h4 {
           display: inline-block;
+          margin-left: 10px;
         }
 
         .fond {
@@ -25,6 +26,16 @@ html {
 
         #jaquette {
           opacity: 0.8;
+        }
+
+        #year {
+          margin-left: 10px;
+          font-size: 18px;
+        }
+
+        #rating {
+          margin-right: 30px;
+          margin-top: 10px;
         }
       }
     }

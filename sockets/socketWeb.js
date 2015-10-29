@@ -45,7 +45,14 @@ var sockets = function (appio) {
         socket.on('details-movie', function (id) {
             program.movie.getInfo(id, function (infos) {
                 socket.emit('details-movie', infos);
-            })
+            });
+        });
+
+        socket.on('getGenres', function () {
+            logger.log('debug', 'getGenres');
+            program.movie.getGenre(function (data) {
+                socket.emit('genres', data.genres);
+            });
         });
 
         socket.on('bande-annonce', function (id) {

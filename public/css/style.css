@@ -15,6 +15,7 @@ html body.movie-details #content {
 
 html body.movie-details #content h4 {
     display: inline-block;
+    margin-left: 10px;
 }
 
 html body.movie-details #content .fond {
@@ -26,6 +27,16 @@ html body.movie-details #content .fond {
 
 html body.movie-details #content #jaquette {
     opacity: 0.8;
+}
+
+html body.movie-details #content #year {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+html body.movie-details #content #rating {
+    margin-right: 30px;
+    margin-top: 10px;
 }
 
 html body.list-movies {
