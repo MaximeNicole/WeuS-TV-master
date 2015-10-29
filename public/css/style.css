@@ -39,6 +39,10 @@ html body.movie-details #content #rating {
     margin-top: 10px;
 }
 
+html body.movie-details #commands a {
+    margin-right: 10px;
+}
+
 html body.list-movies {
     color: #FFFFFF;
 }
