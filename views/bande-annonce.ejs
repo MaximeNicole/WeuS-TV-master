@@ -2,26 +2,38 @@
 <html>
 <head lang="fr">
     <meta charset="UTF-8">
-    <title>Bande annonce</title>
+    <title><%= title %></title>
 
-    <link rel="stylesheet" href="/css/jquery/jquery.mobile.min.css">
-    <link rel="stylesheet" href="/css/jquery/jquery-ui.min.css">
     <link rel="stylesheet" href="/css/materialize.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body id="<%= id %>" class="movie-details">
 
-<% include partials/menu.ejs %>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <% include partials/menu.ejs %>
+            <ul class="right">
+                <li><a href="/movie/<%= id %>/details"><i class="material-icons mdi-image-navigate-before"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
-<div id="content">
-    <iframe width="780" height="430" src="https://www.youtube.com/embed/<%= key %> %>" frameborder="0"
-            allowfullscreen></iframe>
+<div class="had-container">
+    <div id="content" class="row">
+        <div class="col s12">
+            <iframe width="780" height="430" src="https://www.youtube.com/embed/<%= key %>" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/jquery/jquery.min.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
+<script src="/js/materialize/bin/materialize.min.js"></script>
 
 <script>
     io = io.connect();
