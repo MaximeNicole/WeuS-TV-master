@@ -31,9 +31,9 @@ var sockets = function (appio) {
         socket.on('list-movies', function () {
             logger.log('info', 'list-movies');
 
-            program.movie.getList(function (file) {
+            program.movie.get.list(function (file) {
                 logger.log('debug', file);
-                program.movie.getInfo(file, function (infos) {
+                program.movie.get.info(file, function (infos) {
                     //console.log(infos);
                     socket.emit('client-list-movies-local', infos);
                 });
@@ -43,14 +43,14 @@ var sockets = function (appio) {
         });
 
         socket.on('details-movie', function (id) {
-            program.movie.getInfo(id, function (infos) {
+            program.movie.get.info(id, function (infos) {
                 socket.emit('details-movie', infos);
             });
         });
 
         socket.on('getGenres', function () {
             logger.log('debug', 'getGenres');
-            program.movie.getGenre(function (data) {
+            program.movie.get.genre(function (data) {
                 socket.emit('genres', data.genres);
             });
         });

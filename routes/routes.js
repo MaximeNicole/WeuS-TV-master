@@ -28,8 +28,8 @@ var routes = function (app) {
     });
 
     app.get('/movie/:id/bande-annonce', function (req, res) {
-        program.movie.getImdbID(req.params.id, function (imdbID) {
-            program.movie.getBandeAnnonce(imdbID, function (infos) {
+        program.movie.get.imdbID(req.params.id, function (imdbID) {
+            program.movie.get.bandeAnnonce(imdbID, function (infos) {
                 if (infos) {
                     infos.id = req.params.id;
                     logger.log('debug', infos);
